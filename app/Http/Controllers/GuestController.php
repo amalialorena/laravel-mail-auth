@@ -10,3 +10,4 @@ class GuestController extends Controller
         return view('pages.home');
     }
 }
+

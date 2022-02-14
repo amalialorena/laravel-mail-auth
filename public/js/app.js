@@ -1914,9 +1914,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('Component mounted.');
+    axios.get('/api/videogame/list').then(function (r) {
+      return console.log(r);
+    })["catch"](function (e) {
+      return console.error(e);
+    });
   }
 });
 
@@ -37517,6 +37534,24 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "videogames" } }, [
       _c("h1", [_vm._v("Videogames")]),
+      _vm._v(" "),
+      _c("table", [
+        _c("tr", [
+          _c("th", [_vm._v("Videogame Title")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Subtitle")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Rating")]),
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", [_vm._v("Videogame Title")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Subtitle")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Rating")]),
+        ]),
+      ]),
     ])
   },
 ]
