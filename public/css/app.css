@@ -10962,3 +10962,8 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #f8d6db;
+  text-align: center;
+}
+
