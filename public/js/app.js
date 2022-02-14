@@ -37540,8 +37540,8 @@ var render = function () {
       [
         _vm._m(0),
         _vm._v(" "),
-        _vm._l(_vm.videogames, function (videogame, i) {
-          return _c("tr", { key: i }, [
+        _vm._l(_vm.videogames, function (videogame) {
+          return _c("tr", { key: videogame.id }, [
             _c("td", [_vm._v(_vm._s(videogame.title))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(videogame.subtitle))]),

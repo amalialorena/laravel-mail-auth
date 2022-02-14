@@ -8,7 +8,7 @@
         <th>Rating</th>
       </tr>
 
-      <tr v-for="videogame,i in videogames" :key="i">
+      <tr v-for="videogame in videogames" :key="videogame.id">
         <td>{{videogame.title}}</td>
         <td>{{videogame.subtitle}}</td>
         <td>{{videogame.rating}}</td>
