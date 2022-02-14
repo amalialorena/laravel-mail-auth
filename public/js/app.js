@@ -1927,6 +1927,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37542,7 +37547,15 @@ var render = function () {
     _c(
       "table",
       [
-        _vm._m(0),
+        _c("tr", [
+          _c("th", [_vm._v("Videogame Title")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Subtitle")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Rating")]),
+          _vm._v(" "),
+          _vm.user ? _c("th", [_vm._v("Action")]) : _vm._e(),
+        ]),
         _vm._v(" "),
         _vm._l(_vm.videogames, function (videogame) {
           return _c("tr", { key: videogame.id }, [
@@ -37551,6 +37564,14 @@ var render = function () {
             _c("td", [_vm._v(_vm._s(videogame.subtitle))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(videogame.rating))]),
+            _vm._v(" "),
+            _vm.user
+              ? _c("td", [
+                  _c("a", { attrs: { href: "/api/delete/" + videogame.id } }, [
+                    _vm._v("DELETE"),
+                  ]),
+                ])
+              : _vm._e(),
           ])
         }),
       ],
@@ -37558,20 +37579,7 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Videogame Title")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Subtitle")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Rating")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

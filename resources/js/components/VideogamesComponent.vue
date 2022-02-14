@@ -6,12 +6,17 @@
         <th>Videogame Title</th>
         <th>Subtitle</th>
         <th>Rating</th>
+        <th v-if="user">Action</th>
       </tr>
 
       <tr v-for="videogame in videogames" :key="videogame.id">
         <td>{{ videogame.title }}</td>
         <td>{{ videogame.subtitle }}</td>
         <td>{{ videogame.rating }}</td>
+        <td v-if="user">
+            <a :href="`/api/delete/${videogame.id}`">DELETE</a>
+        </td>
+        
       </tr>
     </table>
   </div>

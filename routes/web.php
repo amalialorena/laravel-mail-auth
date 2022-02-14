@@ -25,10 +25,13 @@ Route::get('/', 'GuestController@home') -> name('home');
 
 Route::get('/api/videogame/list', 'ApiController@getVideogames') -> name('videogame.list');
 
+Route::get('/api/delete/{id}', 'ApiController@deleteVideogame') -> name('videogame.delete');
+
 Route::post('/register','Auth\RegisterController@register') ->name('register');
 
 Route::post('/login', 'Auth\LoginController@login') -> name('login');
 
 Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
+
 
 
