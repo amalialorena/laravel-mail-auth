@@ -1933,10 +1933,14 @@ __webpack_require__.r(__webpack_exports__);
       videogames: []
     };
   },
+  props: {
+    user: String
+  },
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('/api/videogame/list').then(function (r) {
+    console.log(this.user);
+    axios.get("/api/videogame/list").then(function (r) {
       return _this.videogames = r.data;
     })["catch"](function (e) {
       return console.error(e);

@@ -1,5 +1,6 @@
 <header>
     @auth
+        <h3> Hello {{Auth::user() -> name}}</h3>
         <br>
         <a href="{{ route('logout') }}" class="btn btn-primary">Logout</a>
 

@@ -9,9 +9,9 @@
       </tr>
 
       <tr v-for="videogame in videogames" :key="videogame.id">
-        <td>{{videogame.title}}</td>
-        <td>{{videogame.subtitle}}</td>
-        <td>{{videogame.rating}}</td>
+        <td>{{ videogame.title }}</td>
+        <td>{{ videogame.subtitle }}</td>
+        <td>{{ videogame.rating }}</td>
       </tr>
     </table>
   </div>
@@ -19,15 +19,24 @@
 
 <script>
 export default {
-    data(){
-        return{
-           videogames: []
-        };
-    },
+  data() {
+    return {
+      videogames: [],
+    };
+  },
+
+  props: {
+    user: String,
+  },
+
   mounted() {
-    axios.get('/api/videogame/list')
-      .then(r => this.videogames= r.data)
-      .catch(e => console.error(e));
-  }
-}
+      console.log(this.user);
+    axios
+      .get("/api/videogame/list")
+      .then((r) => (this.videogames = r.data))
+      .catch((e) => console.error(e));
+
+      
+  },
+};
 </script>
