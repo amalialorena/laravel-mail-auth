@@ -8,10 +8,10 @@
         <th>Rating</th>
       </tr>
 
-      <tr>
-        <td>Videogame Title</td>
-        <td>Subtitle</td>
-        <td>Rating</td>
+      <tr v-for="videogame,i in videogames" :key="i">
+        <td>{{videogame.title}}</td>
+        <td>{{videogame.subtitle}}</td>
+        <td>{{videogame.rating}}</td>
       </tr>
     </table>
   </div>
@@ -19,9 +19,14 @@
 
 <script>
 export default {
+    data(){
+        return{
+           videogames: []
+        };
+    },
   mounted() {
     axios.get('/api/videogame/list')
-      .then(r => console.log(r))
+      .then(r => this.videogames= r.data)
       .catch(e => console.error(e));
   }
 }

@@ -1928,9 +1928,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      videogames: []
+    };
+  },
   mounted: function mounted() {
+    var _this = this;
+
     axios.get('/api/videogame/list').then(function (r) {
-      return console.log(r);
+      return _this.videogames = r.data;
     })["catch"](function (e) {
       return console.error(e);
     });
@@ -37525,33 +37532,39 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "videogames" } }, [
+    _c("h1", [_vm._v("Videogames")]),
+    _vm._v(" "),
+    _c(
+      "table",
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.videogames, function (videogame, i) {
+          return _c("tr", { key: i }, [
+            _c("td", [_vm._v(_vm._s(videogame.title))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(videogame.subtitle))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(videogame.rating))]),
+          ])
+        }),
+      ],
+      2
+    ),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "videogames" } }, [
-      _c("h1", [_vm._v("Videogames")]),
+    return _c("tr", [
+      _c("th", [_vm._v("Videogame Title")]),
       _vm._v(" "),
-      _c("table", [
-        _c("tr", [
-          _c("th", [_vm._v("Videogame Title")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Subtitle")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Rating")]),
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("Videogame Title")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Subtitle")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Rating")]),
-        ]),
-      ]),
+      _c("th", [_vm._v("Subtitle")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Rating")]),
     ])
   },
 ]
